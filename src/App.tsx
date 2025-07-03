@@ -1,17 +1,21 @@
-import Header from "@/components/common/Header";
-import useAuth from "@/hooks/useAuth";
-import { getData } from "@/services/api";
+
+import { useEffect, useState } from "react";
+import { getPing } from "@/services/api";
+
 
 function App() {
-  const { isAuthenticated, login, logout } = useAuth();
+  const [mensaje, setMensaje] = useState("");
+
+  useEffect(() => {
+    getPing()
+      .then((data) => setMensaje(data.message))
+      .catch((err) => setMensaje("Error: " + (err.message || "Sin conexión")));
+  }, []);
 
   return (
-    <div>
-      <Header />
-      <p>Autenticado: {isAuthenticated ? "Sí" : "No"}</p>
-      <button onClick={login}>Iniciar sesión</button>
-      <button onClick={logout}>Cerrar sesión</button>
-      <p>{getData()}</p>
+    <div className="p-8">
+      <h1 className="text-2xl font-bold">Prueba de conexión API</h1>
+      <p className="mt-4">{mensaje}</p>
     </div>
   );
 }

@@ -1,0 +1,132 @@
+/* src/components/Login/Login.css */
+
+/* Contenedor principal (el div negro de pantalla completa) */
+.login-container {
+    @apply min-h-screen flex items-center justify-center bg-white;
+    /* Usando bg-black de Tailwind */
+}
+
+/* Contenedor del formulario (el div blanco) */
+.login-form-wrapper {
+    @apply bg-black p-8 rounded-2xl shadow-lg w-full max-w-md border border-gray-200;
+    /* Usando clases de color de Tailwind */
+}
+
+/* Encabezado "Iniciar Sesión" */
+.login-title {
+    @apply text-3xl font-bold mb-6 text-white text-center;
+    /* Usando clases de color de Tailwind */
+}
+
+/* Formulario */
+.login-form {
+    @apply space-y-4;
+}
+
+/* Labels */
+.login-label {
+    @apply block text-sm font-medium text-gray-600;
+    /* Usando clases de color de Tailwind */
+}
+
+/* Inputs */
+.login-input {
+    @apply mt-1 w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-100 text-black focus:outline-none focus:ring-2 focus:ring-gray-800;
+    /* Usando clases de color de Tailwind */
+}
+
+/* Botón "Entrar" */
+.login-button {
+    @apply w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors;
+}
+
+/* Texto "¿No tienes cuenta?" */
+.login-signup-text {
+    @apply mt-4 text-center text-sm text-gray-400;
+    /* Usando clases de color de Tailwind */
+}
+
+/* Span "Regístrate" */
+.login-signup-link {
+    @apply text-red-600 cursor-pointer hover:text-red-700;
+}
+
+/* src/styles/globals.css */
+/* ... tus estilos globales y clases de login existentes ... */
+
+.login-logo {
+    @apply h-24 w-auto;
+    /* Ajusta este tamaño según lo necesites (h-24 = 96px) */
+}
+
+/* Y si quieres centrarlo y darle un margen inferior desde CSS en lugar de inline */
+.login-logo-wrapper {
+    @apply flex justify-center mb-4;
+}
+
+.register-container {
+    @apply min-h-screen flex items-center justify-center;
+    /* bg-white se manejará a nivel global en body/html */
+}
+
+/* Contenedor del formulario (el div negro del registro) */
+/* Es similar al login-form-wrapper, pero ajustamos el borde si el color #3f3f46 es nuevo */
+.register-form-wrapper {
+    @apply bg-black p-8 rounded-2xl shadow-lg w-full max-w-md border border-zinc-600 text-white;
+    /* Usé border-zinc-600 para #3f3f46 */
+}
+
+/* Contenedor para el logotipo dentro del formulario */
+.register-logo-wrapper {
+    @apply flex justify-center mb-4;
+}
+
+/* Imagen del logotipo */
+.register-logo {
+    @apply h-16 w-auto;
+    /* Ajusta este tamaño si es diferente al h-24 del login */
+}
+
+/* Encabezado "Crear Cuenta" */
+/* Similar a login-title, pero con texto "Crear Cuenta" */
+.register-title {
+    @apply text-3xl font-bold mb-6 text-white text-center;
+}
+
+/* Formulario (reutiliza login-form ya que es space-y-4) */
+.register-form {
+    @apply space-y-4;
+}
+
+/* Labels (igual que las de login) */
+.register-label {
+    @apply block text-sm font-medium text-gray-400;
+    /* Asegúrate que sea consistente con tu paleta de grises sobre fondo oscuro */
+}
+
+/* Inputs (fondo blanco, texto negro, bordes claros, focus en gris/negro) */
+/* ESTA CLASE ES DIFERENTE A LA DE LOGIN, ASÍ QUE LA CREAMOS O LA HACEMOS ESPECÍFICA */
+.register-input {
+    @apply mt-1 w-full px-4 py-2 rounded-lg bg-gray-50 border border-gray-100 text-black focus:outline-none focus:ring-2 focus:ring-gray-800;
+    /* Reutilizando clases de Tailwind estándar si coinciden con tus hex */
+    /* NOTA: Tus inputs tenían bg-[#fafafa] border-[#e4e4e7] text-[#000000] focus:ring-[#27272a] */
+    /* Ajusta si los grises de Tailwind (gray-50, gray-100, gray-800) no son EXACTOS */
+}
+
+
+/* Botón "Registrarse" (reutiliza login-button si el estilo es idéntico) */
+.register-button {
+    @apply w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors;
+}
+
+/* Texto "¿Ya tienes cuenta?" (reutiliza login-signup-text) */
+.register-signin-text {
+    /* Le di un nombre diferente por claridad */
+    @apply mt-4 text-center text-sm text-gray-400;
+}
+
+/* Span "Inicia sesión" (reutiliza login-signup-link) */
+.register-signin-link {
+    /* Le di un nombre diferente por claridad */
+    @apply text-red-600 cursor-pointer hover:text-red-700;
+}
